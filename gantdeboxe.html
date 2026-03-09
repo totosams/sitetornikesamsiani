@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GRADES & CEINTURES | JUDOGI STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-red: #ff003c;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #050505;
+            font-family: 'Rajdhani', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Titre avec effet de scanline */
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(1.5em, 5vw, 3em);
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #555, #fff, #555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
+
+        /* Grille des produits */
+        .belt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Carte de ceinture individuelle */
+        .belt-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .belt-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-red);
+            box-shadow: 0 10px 30px rgba(255, 0, 60, 0.2);
+            background: rgba(255, 0, 60, 0.02);
+        }
+
+        /* Emplacement pour tes photos */
+        .image-container {
+            width: 100%;
+            height: 200px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
+        }
+
+        .belt-name {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .belt-status {
+            font-size: 0.8em;
+            color: var(--neon-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* Bouton de commande (fictif) */
+        .buy-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--neon-red);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .buy-btn:hover {
+            background: var(--neon-red);
+            box-shadow: 0 0 20px var(--neon-red);
+        }
+
+        /* Bouton Retour */
+        .back-nav {
+            margin-top: 80px;
+            text-decoration: none;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9em;
+            letter-spacing: 3px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .back-nav:hover { color: #fff; }
+
+    </style>
+</head>
+<body>
+
+    <h1>EQUIPMENT : BELTS SECTION</h1>
+
+    <div class="belt-grid">
+        
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceintureblanche.png" alt="Ceinture Blanche">
+            </div>
+            <div class="belt-name">BLANCHE</div>
+            <div class="belt-status">Niveau 6ème Kyu</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceinturejaune.png" alt="Ceinture Jaune">
+            </div>
+            <div class="belt-name">JAUNE</div>
+            <div class="belt-status">Niveau 5ème Kyu</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceintureorange.png" alt="Ceinture Orange">
+            </div>
+            <div class="belt-name">ORANGE</div>
+            <div class="belt-status">Niveau 4ème Kyu</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="belt-card">
+                <div class="image-container">
+                    <img src="ceintureverte.png" alt="Ceinture Verte">
+                </div>
+                <div class="belt-name">VERTE</div>
+                <div class="belt-status">Niveau 3ème Kyu</div>
+                <button class="buy-btn">SÉLECTIONNER</button>
+            </div>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceinturebleue.png" alt="Ceinture Bleue">
+            </div>
+            <div class="belt-name">BLEUE</div>
+            <div class="belt-status">Niveau 2ème Kyu</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceinturemarron.png" alt="Ceinture Marron">
+            </div>
+            <div class="belt-name">MARRON</div>
+            <div class="belt-status">Niveau 1er Kyu</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="ceinturenoire.png" alt="Ceinture Noire">
+            </div>
+            <div class="belt-name">NOIRE</div>
+            <div class="belt-status">Niveau 1er DAN</div>
+            <button class="buy-btn">SÉLECTIONNER</button>
+        </div>
+
+        <div class="belt-card">
+            <div class="image-container">
+                <img src="broderie.png" alt="Broderie Personnalisée">
+            </div>
+            <div class="belt-name">CUSTOM</div>
+            <div class="belt-status">Broderie Or / Rouge</div>
+            <button class="buy-btn">PERSONNALISER</button>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-nav">← TERMINAL PRINCIPAL</a>
+
+</body>
+</html>
