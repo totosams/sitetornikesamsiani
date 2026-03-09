@@ -1,0 +1,164 @@
+
+Tornike Samsiani <43008764@parisnanterre.fr>
+10:38 (il y a 2 minutes)
+À moi
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Cyber Néon</title>
+<style>
+    /* Corps de la page avec fond animé style cyber néon */
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #0b0c10;
+        overflow: hidden;
+    }
+
+    /* Animation de lignes lumineuses en arrière-plan */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+            45deg,
+            rgba(0,255,255,0.05) 0,
+            rgba(0,255,255,0.05) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+        animation: moveBackground 20s linear infinite;
+        z-index: 0;
+    }
+
+    @keyframes moveBackground {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Conteneur principal */
+    div {
+        position: relative;
+        z-index: 1;
+        background-color: #000000;
+        border: 4px solid #00FFFF;
+        border-radius: 35px;
+        width: 75%;
+        max-width: 1200px;
+        padding: 40px;
+        margin: 20px auto;
+        box-shadow: 0 0 30px #00FFFF, 0 0 60px #00FFFF, 0 0 90px #00FFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: containerPulse 3s ease-in-out infinite alternate;
+        transition: transform 0.5s, box-shadow 0.5s;
+    }
+
+    @keyframes containerPulse {
+        0% { box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF; }
+        50% { box-shadow: 0 0 40px #00FFFF, 0 0 80px #00FFFF, 0 0 120px #00FFFF; }
+        100% { box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF; }
+    }
+
+    div:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px #00FFFF, 0 0 100px #00FFFF, 0 0 150px #00FFFF;
+    }
+
+    /* Titres néon pulsants */
+    h1, h2 {
+        font-weight: bold;
+        text-align: center;
+        background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF, #FF00FF);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: neonTextPulse 8s ease infinite alternate;
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #FF0;
+        margin: 10px 0;
+    }
+
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+
+    @keyframes neonTextPulse {
+        0% { text-shadow: 0 0 10px #FFF, 0 0 20px #FF0, 0 0 30px #0FF; background-position: 0% 50%; }
+        50% { text-shadow: 0 0 20px #FFF, 0 0 40px #FF0, 0 0 60px #0FF; background-position: 100% 50%; }
+        100% { text-shadow: 0 0 10px #FFF, 0 0 20px #FF0, 0 0 30px #0FF; background-position: 0% 50%; }
+    }
+
+    /* Paragraphes interactifs avec pulse */
+    p {
+        color: #FF4C4C;
+        background-color: #9ACD32;
+        font-size: 1.8em;
+        padding: 20px;
+        border-radius: 12px;
+        line-height: 1.5;
+        max-width: 80%;
+        text-align: center;
+        box-shadow: 0 0 5px #000;
+        transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+        animation: paragraphPulse 4s ease-in-out infinite alternate;
+    }
+
+    p:hover {
+        background-color: #ADFF2F;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #9ACD32, 0 0 25px #ADFF2F;
+    }
+
+    @keyframes paragraphPulse {
+        0% { box-shadow: 0 0 5px #000; }
+        50% { box-shadow: 0 0 15px #9ACD32, 0 0 25px #ADFF2F; }
+        100% { box-shadow: 0 0 5px #000; }
+    }
+
+    /* Paragraphe spécial néon */
+    .special {
+        background-color: #8B4513;
+        padding: 15px;
+        border-radius: 12px;
+        color: #FFFFFF;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 0 0 5px #8B4513;
+        transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+        animation: specialPulse 4s ease-in-out infinite alternate;
+    }
+
+    .special:hover {
+        background-color: #A0522D;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #A0522D, 0 0 40px #FF8C00;
+    }
+
+    @keyframes specialPulse {
+        0% { box-shadow: 0 0 5px #8B4513; }
+        50% { box-shadow: 0 0 15px #A0522D, 0 0 30px #FF8C00; }
+        100% { box-shadow: 0 0 5px #8B4513; }
+    }
+
+</style>
+</head>
+<body>
+    <div>
+        <h1>Bienvenue sur mon site cyber néon</h1>
+        <h2>Tout pulse et scintille comme un vrai panneau néon</h2>
+        <p>Ceci est un paragraphe interactif avec glow et pulsation.</p>
+        <p class="special">Paragraphe spécial qui pulse et brille au survol.</p>
+    </div>
+</body>
+</html>   
