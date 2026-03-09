@@ -161,6 +161,7 @@
       text-transform:uppercase;
       user-select:none;
     }
+
     .dot{
       width:10px;height:10px;border-radius:50%;
       background: radial-gradient(circle at 30% 30%, #fff, var(--red));
@@ -281,6 +282,7 @@
       text-transform:uppercase;
       font-size:.78rem;
     }
+
     .arrow span{
       width:28px;height:28px;border-radius:999px;
       display:inline-flex;align-items:center;justify-content:center;
@@ -288,6 +290,7 @@
       background: rgba(0,0,0,.25);
       transition: transform .25s ease, border-color .25s ease;
     }
+
     .card-link:hover .arrow span{
       transform: translateX(6px);
       border-color: rgba(255,255,255,.32);
@@ -360,6 +363,7 @@
       justify-content:center;
       gap:12px;
     }
+
     .primary:hover{
       transform: translateY(-8px);
       box-shadow: 0 22px 45px rgba(225,6,0,.32);
@@ -384,6 +388,7 @@
       gap:12px;
       min-width: 220px;
     }
+
     .secondary:hover{
       transform: translateY(-8px);
       background: rgba(255,255,255,.10);
@@ -440,6 +445,7 @@
       border: 1px solid rgba(255,255,255,.16);
       transition: transform .2s ease, background .2s ease, border-color .2s ease;
     }
+
     .back:hover{
       transform: translateY(-6px);
       background: rgba(255,255,255,.10);
@@ -531,6 +537,158 @@
       color: rgba(225,6,0,.95);
     }
 
+    /* ========= PAGE FORMATION STAPS / CYBER NEON ========= */
+    .staps-shell{
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 28px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(0,255,255,.25);
+      box-shadow: 0 0 20px rgba(0,255,255,.18), 0 0 50px rgba(0,255,255,.12);
+    }
+
+    .staps-shell::before{
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(0,255,255,0.05) 0,
+        rgba(0,255,255,0.05) 1px,
+        transparent 1px,
+        transparent 5px
+      );
+      animation: moveBackground 20s linear infinite;
+      z-index: 0;
+      pointer-events:none;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    .staps-content{
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .staps-main-title,
+    .staps-subtitle{
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF, #FF00FF);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neonTextPulse 8s ease infinite alternate;
+      text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #FF0;
+    }
+
+    .staps-main-title{
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .staps-subtitle{
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    @keyframes neonTextPulse {
+      0% { text-shadow: 0 0 10px #FFF, 0 0 20px #FF0, 0 0 30px #0FF; background-position: 0% 50%; }
+      50% { text-shadow: 0 0 20px #FFF, 0 0 40px #FF0, 0 0 60px #0FF; background-position: 100% 50%; }
+      100% { text-shadow: 0 0 10px #FFF, 0 0 20px #FF0, 0 0 30px #0FF; background-position: 0% 50%; }
+    }
+
+    .staps-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .staps-card{
+      position: relative;
+      z-index: 1;
+      background-color: #000000;
+      border: 3px solid #00FFFF;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 0 20px #00FFFF, 0 0 40px rgba(0,255,255,.45);
+      transition: transform .35s ease, box-shadow .35s ease;
+      animation: containerPulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes containerPulse {
+      0% { box-shadow: 0 0 20px #00FFFF, 0 0 40px rgba(0,255,255,.45), 0 0 60px rgba(0,255,255,.20); }
+      50% { box-shadow: 0 0 35px #00FFFF, 0 0 70px rgba(0,255,255,.55), 0 0 110px rgba(0,255,255,.24); }
+      100% { box-shadow: 0 0 20px #00FFFF, 0 0 40px rgba(0,255,255,.45), 0 0 60px rgba(0,255,255,.20); }
+    }
+
+    .staps-card:hover{
+      transform: scale(1.02);
+      box-shadow: 0 0 40px #00FFFF, 0 0 80px rgba(0,255,255,.6), 0 0 130px rgba(0,255,255,.25);
+    }
+
+    .staps-card h3{
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      letter-spacing:.04em;
+      color:#fff;
+    }
+
+    .staps-card p{
+      color: #FF4C4C;
+      background-color: #9ACD32;
+      font-size: 1.08rem;
+      padding: 18px;
+      border-radius: 14px;
+      line-height: 1.6;
+      text-align: center;
+      box-shadow: 0 0 5px #000;
+      transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+      animation: paragraphPulse 4s ease-in-out infinite alternate;
+      margin: 0;
+    }
+
+    .staps-card p:hover {
+      background-color: #ADFF2F;
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #9ACD32, 0 0 25px #ADFF2F;
+    }
+
+    @keyframes paragraphPulse {
+      0% { box-shadow: 0 0 5px #000; }
+      50% { box-shadow: 0 0 15px #9ACD32, 0 0 25px #ADFF2F; }
+      100% { box-shadow: 0 0 5px #000; }
+    }
+
+    .staps-card p.special {
+      background-color: #8B4513;
+      color: #FFFFFF;
+      font-weight: bold;
+      box-shadow: 0 0 5px #8B4513;
+      animation: specialPulse 4s ease-in-out infinite alternate;
+    }
+
+    .staps-card p.special:hover {
+      background-color: #A0522D;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #A0522D, 0 0 40px #FF8C00;
+    }
+
+    @keyframes specialPulse {
+      0% { box-shadow: 0 0 5px #8B4513; }
+      50% { box-shadow: 0 0 15px #A0522D, 0 0 30px #FF8C00; }
+      100% { box-shadow: 0 0 5px #8B4513; }
+    }
+
     /* Responsive */
     @media (max-width: 900px){
       .cells{ grid-template-columns: 1fr; }
@@ -542,6 +700,7 @@
       .imgwrap{ width: 84px; height: 84px; }
       .navimg{ width: 72px; height: 72px; }
       .badge{ width: 100%; justify-content:center; }
+      .staps-shell{ padding: 18px; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -584,7 +743,7 @@
 
           <div class="grid">
             <!-- Protège-dents -->
-            <a class="card-link" data-card data-open="dents">
+            <a class="card-link" data-card data-open="dents" href="#">
               <div class="left">
                 <div class="label">PROTÈGE-DENTS</div>
                 <div class="hint">Protection max • confort • maintien</div>
@@ -596,7 +755,7 @@
             </a>
 
             <!-- Gants -->
-            <a class="card-link" data-card data-open="gants">
+            <a class="card-link" data-card data-open="gants" href="#">
               <div class="left">
                 <div class="label">GANTS DE BOXE</div>
                 <div class="hint">Puissance • précision • absorption</div>
@@ -608,7 +767,7 @@
             </a>
 
             <!-- Tenue -->
-            <a class="card-link" data-card data-open="tenue">
+            <a class="card-link" data-card data-open="tenue" href="#">
               <div class="left">
                 <div class="label">TENUE DE BOXE</div>
                 <div class="hint">Style • mobilité • respirabilité</div>
@@ -616,6 +775,18 @@
               </div>
               <div class="imgwrap" aria-hidden="true">
                 <div style="position:relative;z-index:1;font-weight:900;letter-spacing:.12em;opacity:.9">PRO</div>
+              </div>
+            </a>
+
+            <!-- Formation STAPS -->
+            <a class="card-link" data-card data-open="staps" href="#" style="border-color: rgba(0,255,255,.35);">
+              <div class="left">
+                <div class="label">FORMATION STAPS</div>
+                <div class="hint">MELS • MOS • Université Paris Nanterre</div>
+                <div class="arrow">Ouvrir <span style="border-color: rgba(0,255,255,.35)">›</span></div>
+              </div>
+              <div class="imgwrap" aria-hidden="true" style="border-color: rgba(0,255,255,.35);">
+                <div style="position:relative;z-index:1;font-weight:900;letter-spacing:.12em;color:#00FFFF">STAPS</div>
               </div>
             </a>
 
@@ -636,8 +807,8 @@
             <a class="primary" href="Formulaire d'inscription.html">
               REJOINDRE LE CLUB <span style="opacity:.9">→</span>
             </a>
-            <a class="secondary" href="#" onclick="openPage('tenue'); return false;">
-              VOIR LA COLLECTION <span style="opacity:.9">→</span>
+            <a class="secondary" href="#" onclick="openPage('staps'); return false;">
+              VOIR LA PAGE STAPS <span style="opacity:.9">→</span>
             </a>
           </div>
 
@@ -721,7 +892,7 @@
           </div>
         </div>
 
-        <!-- PAGE TENUE (✅ IMAGES AJOUTÉES ICI) -->
+        <!-- PAGE TENUE -->
         <div class="page" id="tenuePage">
           <div class="page-head">
             <h2 class="page-title">Tenue de boxe</h2>
@@ -758,6 +929,48 @@
           </div>
         </div>
 
+        <!-- PAGE FORMATION STAPS -->
+        <div class="page" id="stapsPage">
+          <div class="page-head">
+            <h2 class="page-title">Formation STAPS</h2>
+            <button class="back" type="button" onclick="openPage('home')">← Retour</button>
+          </div>
+
+          <div class="staps-shell">
+            <div class="staps-content">
+              <h1 class="staps-main-title">Présentation de la formation Master STAPS</h1>
+              <h2 class="staps-subtitle">Université Paris Nanterre</h2>
+
+              <div class="staps-grid">
+                <div class="staps-card">
+                  <h3>Présentation de la formation MELS</h3>
+                  <p class="special">
+                    C’est une spécialisation des études STAPS qui prépare à organiser, gérer et promouvoir
+                    des activités ou des événements sportifs dans des clubs, associations, collectivités, etc.
+                  </p>
+                </div>
+
+                <div class="staps-card">
+                  <h3>Présentation de la formation MOS</h3>
+                  <p>
+                    C’est une spécialisation qui forme à gérer et administrer des structures sportives comme
+                    des clubs, des fédérations ou des entreprises du sport.
+                  </p>
+                </div>
+
+                <div class="staps-card">
+                  <h3>Présentation de l'Université Paris Nanterre</h3>
+                  <p>
+                    L’Université Paris Nanterre est une université publique située à Nanterre, près de Paris.
+                    Elle accueille plus de 35 000 étudiants et propose des formations dans de nombreux domaines
+                    comme le droit, l’économie, les sciences humaines et le sport (STAPS).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -773,6 +986,7 @@
       dents: document.getElementById("dentsPage"),
       gants: document.getElementById("gantsPage"),
       tenue: document.getElementById("tenuePage"),
+      staps: document.getElementById("stapsPage"),
     };
 
     function setActive(key){
@@ -786,7 +1000,6 @@
     }
     window.openPage = openPage;
 
-    // Click accueil -> pages catégories
     openers.forEach(el=>{
       el.addEventListener("click", (e)=>{
         e.preventDefault();
@@ -795,7 +1008,6 @@
       });
     });
 
-    // Parallaxe fond + spotlight
     document.addEventListener("mousemove", (e) => {
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
@@ -809,7 +1021,6 @@
       hero.style.setProperty("--my", my + "%");
     });
 
-    // Spotlight au survol des cartes (position locale)
     cards.forEach(card => {
       card.addEventListener("mousemove", (e) => {
         const r = card.getBoundingClientRect();
